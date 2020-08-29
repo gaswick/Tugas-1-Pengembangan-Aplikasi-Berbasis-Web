@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_tugas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to a very humble Website of mine!</h1>
+        <p>by Bagas</p>
+
+        <span id="down">&#8595</span>
+    </header>
+
+
+    <ul class="topnav">
+        <li><a class="active" href="home.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.onbeforeunload = function() {
+            window.scrollTo(0, 0);
+        }
+
+        $(document).ready(function() {
+            $('#down').on('click', function() {
+                $("html").scrollTop(0);
+                console.log("Clicked!");
+                $('html, body').animate({
+                    scrollTop: $(".topnav").offset().top
+                }, 1000);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
